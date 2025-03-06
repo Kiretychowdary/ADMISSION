@@ -1,0 +1,56 @@
+.top-bar {
+    background-color: #002147;
+    color: #fff;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.top-bar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.top-bar-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.top-bar-links a:hover {
+    color: #f0a500;
+}
+
+.admissions {
+    background-color: #f0a500;
+    color: #002147;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admissions:hover {
+    background-color: #ffcc00;
+}
+.top-bar {
+    background-color: #002147;
+    color: #fff;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif; /* Updated font */
+  }
+  
+  .top-bar-links a {
+    font-family: "Montserrat", sans-serif; /* Updated font */
+  }
+  
+  .admissions {
+    font-family: "Montserrat", sans-serif; /* Updated font */
+  }
