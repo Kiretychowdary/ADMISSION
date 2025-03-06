@@ -1,15 +1,24 @@
 .containers {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #121212; /* Dark gray */
 }
 
 .container {
-  width: 45%;
+  width: 35%; /* Decreased width from 45% */
   border-radius: 10px;
-  overflow: hidden; /* Ensures the image doesn't overflow the container */
+  overflow: hidden;
   position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #1e1e1e; /* Deep black-gray */
+}
+
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .image-overlay {
@@ -20,51 +29,201 @@
 
 .container-image {
   width: 100%;
-  height: 60%;
-  object-fit: cover; /* Ensures the image covers the container */
+  height: 100%;
+  object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.container:hover .container-image {
+  transform: scale(1.1);
 }
 
 .overlay-text {
   position: absolute;
-  top: 50%;
+  bottom: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   text-align: center;
-  color: white;
+  color: #ff9800; /* Bright orange */
+  width: 100%;
+  padding: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.container:hover .overlay-text {
+  transform: translate(-50%, -10px);
+  opacity: 1;
 }
 
 h2 {
   font-size: 24px;
-  margin: 0 0 20px 0;
-  color: white;
+  margin-bottom: 10px;
+  color: #ff9800; /* Bright orange */
 }
 
+/* Initially hidden button */
 .apply-button {
-  padding: 10px 20px;
-  background-color: yellow;
+  padding: 12px 24px;
+  background-color: #ff5722; /* Deep orange */
   color: white;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: auto;
+}
+
+/* Make button visible when hovering */
+.container:hover .apply-button {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .apply-button:hover {
-  background-color: #0056b3;
-}
-.banner-text.left-align {
-  left: 10%;
-  transform: translate(0, -50%);
-  text-align: left;
-  white-space: nowrap; /* To keep the text in one line */
-  overflow: hidden; /* Hide overflowing text */
-  border-right: 3px solid white; /* Simulate cursor */
-  animation: blink-cursor 0.8s step-end infinite;
+  background-color: #ff9800; /* Lighter orange for hover */
+  box-shadow: 0px 4px 15px rgba(255, 152, 0, 0.9); /* Neon glow */
+  transform: scale(1.15);
+  color: white;
 }
 
-@keyframes blink-cursor {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
+/* Adds a linear gradient overlay */
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Popup form styling */
+.popup-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Select dropdown styling */
+.form-input[type="select"] {
+  appearance: none;
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007bff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 12px center;
+  background-size: 16px;
+}
+
+/* Textarea styling */
+textarea.form-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+
+
+/* Success message styling */
+.success-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  color: #155724;
+  margin-top: 20px;
+}
+
+.success-message p {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
 }

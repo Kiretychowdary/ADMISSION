@@ -1,0 +1,224 @@
+.achievements {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .achievements h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: #1e293b;
+    margin-bottom: 4rem;
+    position: relative;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .achievements h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 2px;
+  }
+  
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .achievement-box {
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    text-align: center  ;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03),
+                0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+  }
+  
+  .achievement-box img{
+    height: 100px;
+  }
+  
+  .achievement-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+  .achievement-box:hover h2{
+    color:red;
+    transform: translate(2px);
+  }
+  .achievement-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .achievement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+  }
+  
+  .achievement-box:hover .achievement-image {
+    opacity: 0.07;
+  }
+  
+  .icon-wrapper {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .achievement-box:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .achievement-icon {
+    color: white;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .achievement-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .achievement-box h2 {
+    font-size: 2.5rem;
+    color: #2563eb;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    font-weight: 700;
+  }
+  
+  .achievement-box h2::after {
+    display: none;
+  }
+  
+  .achievement-box h3 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .achievement-box p {
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  /* Gradient border effect */
+  .achievement-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    border-radius: 24px;
+  }
+  
+  .achievement-box:hover::before {
+    opacity: 0.03;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .achievement-box {
+    animation: fadeInUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+  }
+  
+  .achievement-box:nth-child(1) { animation-delay: 0.1s; }
+  .achievement-box:nth-child(2) { animation-delay: 0.2s; }
+  .achievement-box:nth-child(3) { animation-delay: 0.3s; }
+  .achievement-box:nth-child(4) { animation-delay: 0.4s; }
+  .achievement-box:nth-child(5) { animation-delay: 0.5s; }
+  .achievement-box:nth-child(6) { animation-delay: 0.6s; }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .achievements {
+      padding: 4rem 1rem;
+    }
+    
+    .achievements h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .achievements-grid {
+      gap: 2rem;
+    }
+    
+    .achievement-box {
+      padding: 2rem;
+    }
+    
+    .achievement-box h2 {
+      font-size: 2rem;
+    }
+    
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+    }
+    
+    .achievement-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }

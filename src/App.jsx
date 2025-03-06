@@ -1,8 +1,13 @@
 import React from "react";
 import TopBar from "./components/TopBar";
 import Header from "./components/Header";
+import ApplicationProcess from "./components/ApplicationProcess";
 import Banner from "./components/Banner";
+import Placements from "./components/Placements.jsx";
 import Containers from "./components/Containers.jsx";
+import Achievements from "./components/Achievements.jsx";
+import Branches from "./components/Branches.jsx";
+
 import "./App.css";
 
 function App() {
@@ -14,19 +19,19 @@ function App() {
             <Containers />
 
             {/* About Us Section */}
-            <section className="about-us">
+            {/* <section className="about-us">
                 <div className="about-us-content">
                     <h2>About Us</h2>
                     <p>
-                        Vignan University is a premier institution dedicated to providing quality education and fostering innovation. 
+                        Vignan University is a premier institution dedicated to providing quality education and fostering innovation.
                         Our mission is to empower students with the knowledge and skills needed to excel in their chosen fields.
                     </p>
                     <button className="learn-more">Learn More</button>
                 </div>
-            </section>
+            </section> */}
 
             {/* Programs Section */}
-            <section className="programs">
+            {/* <section className="programs">
                 <h2>Our Programs</h2>
                 <div className="programs-grid">
                     <div className="program-card">
@@ -42,8 +47,14 @@ function App() {
                         <p>Develop leadership and management skills to excel in the business world.</p>
                     </div>
                 </div>
-            </section>
-
+            </section> */}
+        
+            <Branches />
+            <ApplicationProcess />
+            <Achievements />
+            <Placements />
+            
+           
             {/* Footer */}
             <footer className="footer">
                 <div className="footer-content">

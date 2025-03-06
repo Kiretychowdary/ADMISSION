@@ -1,0 +1,33 @@
+.campuses-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 24px;
+  }
+  
+  .campuses-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .campuses-content {
+    display: flex;
+    /* justify-content: center; */
+    width: 100%;
+  }
+  
+  .campuses-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+  
+  .campus-image {
+    width: 340px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

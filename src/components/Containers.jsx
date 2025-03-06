@@ -1,7 +1,12 @@
 import React from "react";
-import "./Containers.css"; // Ensure this CSS file is correctly named and imported
+import "./Containers.css";
 
 function Containers() {
+  const handleApplyClick = (type) => {
+    alert(`Redirecting to ${type} Admissions`);
+    // You can replace the alert with a `window.location.href = "URL_HERE"` for actual redirection.
+  };
+
   return (
     <div className="containers">
       {/* Container 1 */}
@@ -14,7 +19,12 @@ function Containers() {
           />
           <div className="overlay-text">
             <h2>Admissions India</h2>
-            <button className="apply-button">Apply Now</button>
+            <button
+              className="apply-button"
+              onClick={() => handleApplyClick("India")}
+            >
+              Apply Now
+            </button>
           </div>
         </div>
       </div>
@@ -29,7 +39,12 @@ function Containers() {
           />
           <div className="overlay-text">
             <h2>Admissions International</h2>
-            <button className="apply-button">Apply Now</button>
+            <button
+              className="apply-button"
+              onClick={() => handleApplyClick("International")}
+            >
+              Apply Now
+            </button>
           </div>
         </div>
       </div>

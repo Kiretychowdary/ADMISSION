@@ -1,0 +1,97 @@
+/* Application Process Section */
+.application-process {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
+    text-align: center;
+    flex: 1 1 200px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.step.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.step-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.step-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.arrow-icon {
+    font-size: 2rem;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .step-title {
+        font-size: 1.3rem;
+    }
+
+    .step-description {
+        font-size: 0.9rem;
+    }
+
+    .arrow-icon {
+        display: none; /* Hide arrows on small screens */
+    }
+
+    .process-steps {
+        flex-direction: column;
+    }
+}
