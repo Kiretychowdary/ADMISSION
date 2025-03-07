@@ -11,7 +11,7 @@ const Banner = () => {
         confirmPassword: '',
     });
 
-    const fullText = 'Welcome to Vignan University';
+    const fullText = ' to Vignan University';
     const speed = 100;
 
     useEffect(() => {

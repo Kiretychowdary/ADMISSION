@@ -5,6 +5,7 @@
 }
 
 .heading {
+
     font-size: 2.75rem;
     margin-bottom: 40px;
     color: #1e293b; /* Darker color for better contrast */
@@ -34,6 +35,11 @@
     100% {
         width: 120px;
     }
+
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #64748b;
+
 }
 
 .logo-grid {
