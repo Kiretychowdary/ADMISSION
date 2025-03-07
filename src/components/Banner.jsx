@@ -13,7 +13,7 @@ const Banner = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
     const bannerRef = useRef(null);
 
-    const fullText = 'Welcome to Vignan University';
+    const fullText = ' to Vignan University';
     const speed = 100;
 
     useEffect(() => {
