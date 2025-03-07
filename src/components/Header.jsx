@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <img src="https://f2.leadsquaredcdn.com/t/t20230102173428/content/common/images/Vignan%20Logo.jpg" alt="Logo" />
+        <img src="https://vignan.ac.in/newvignan/assets/images/Logo%20with%20Deemed.svg" alt="Logo" />
       </div>
       <nav className="nav-links">
         <a href="#home">Home</a>

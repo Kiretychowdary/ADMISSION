@@ -10,15 +10,10 @@ function TopBar() {
                 <a href="#faculty">FACULTY</a>
                 <a href="#schools">SCHOOLS</a>
                 <a href="#campus-life">CAMPUS LIFE</a>
-                <a href="#admissions">ADMISSIONS</a>
-                <a href="#amrita">AMRITA</a>
-                <a href="#news">NEWS</a>
-                <a href="#blog">BLOG</a>
-                <a href="#events">EVENTS</a>
-                <a href="#jobs">JOBS</a>
-                <a href="#contact">CONTACT</a>
             </div>
-            <button className="admissions">ADMISSIONS</button>
+            <button className="admissions">
+                Admissions 2025 <span className="cursor-pointer">➜</span>
+            </button>
         </div>
     );
 }

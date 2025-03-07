@@ -3,7 +3,6 @@
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  background-color: #121212; /* Dark gray */
 }
 
 .container {
@@ -49,11 +48,7 @@
   width: 100%;
   padding: 20px;
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.container:hover .overlay-text {
-  transform: translate(-50%, -10px);
-  opacity: 1;
+  z-index: 2; /* Ensure the overlay text is above the image */
 }
 
 h2 {
@@ -72,10 +67,11 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  opacity: 0;
+  opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   display: block;
   margin: auto;
+  z-index: 3; /* Ensure the button is above the overlay text */
 }
 
 /* Make button visible when hovering */
@@ -100,130 +96,5 @@ h2 {
   width: 100%;
   height: 50%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-}
-
-/* Popup form styling */
-.popup-form {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.form-container {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 450px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-.form-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  color: #333;
-  text-align: center;
-}
-
-/* Form group styling */
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #555;
-}
-
-.form-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #333;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
-}
-
-/* Select dropdown styling */
-.form-input[type="select"] {
-  appearance: none;
-  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007bff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat right 12px center;
-  background-size: 16px;
-}
-
-/* Textarea styling */
-textarea.form-input {
-  resize: vertical;
-  min-height: 100px;
-}
-
-/* Submit button styling */
-.submit-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-/* Close button styling */
-.close-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  color: #888;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close-button:hover {
-  color: #333;
-}
-
-
-
-/* Success message styling */
-.success-message {
-  text-align: center;
-  padding: 20px;
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-radius: 8px;
-  color: #155724;
-  margin-top: 20px;
-}
-
-.success-message p {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
+  z-index: 1; /* Ensure the gradient is below the overlay text and button */
 }
