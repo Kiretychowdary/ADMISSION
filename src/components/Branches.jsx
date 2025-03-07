@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import './styles/Branches.css';
+import '../styles/Branches.css';
 
 // Branch data with images
 const branches = [

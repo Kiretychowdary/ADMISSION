@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/Rankings.css';
+import '../styles/Rankings.css';
 import { Award, Star, Globe, Trophy, BarChart } from "lucide-react";
 
 function Rankings() {

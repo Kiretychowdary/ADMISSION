@@ -1,5 +1,5 @@
 import React from "react";
-import './styles/Placements.css';
+import '../styles/Placements.css';
 
 const Placements = () => {
   // List of company logos with image links

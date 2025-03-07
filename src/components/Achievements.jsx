@@ -1,5 +1,5 @@
 import React from 'react';
-import './Achievements.css';
+import '../styles/Achievements.css';
 
 function Achievements() {
   return (
