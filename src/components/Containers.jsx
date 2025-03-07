@@ -2,10 +2,9 @@ import React from "react";
 import "./Containers.css";
 
 function Containers() {
-  const handleApplyClick = (type) => {
-    alert(`Redirecting to ${type} Admissions`);
-    // You can replace the alert with a `window.location.href = "URL_HERE"` for actual redirection.
-  };
+  // Define the URLs for the buttons
+  const indiaAdmissionsUrl = "https://example.com/india-admissions"; // Replace with the actual URL
+  const internationalAdmissionsUrl = "https://example.com/international-admissions"; // Replace with the actual URL
 
   return (
     <div className="containers">
@@ -18,13 +17,10 @@ function Containers() {
             className="container-image"
           />
           <div className="overlay-text">
-            <h2>Admissions India</h2>
-            <button
-              className="apply-button"
-              onClick={() => handleApplyClick("India")}
-            >
-              Apply Now
-            </button>
+            <h2>National</h2>
+            <a href={indiaAdmissionsUrl} target="_blank" rel="noopener noreferrer">
+              <button className="apply-button">Apply Now</button>
+            </a>
           </div>
         </div>
       </div>
@@ -38,13 +34,10 @@ function Containers() {
             className="container-image"
           />
           <div className="overlay-text">
-            <h2>Admissions International</h2>
-            <button
-              className="apply-button"
-              onClick={() => handleApplyClick("International")}
-            >
-              Apply Now
-            </button>
+            <h2>International</h2>
+            <a href={internationalAdmissionsUrl} target="_blank" rel="noopener noreferrer">
+              <button className="apply-button">Apply Now</button>
+            </a>
           </div>
         </div>
       </div>

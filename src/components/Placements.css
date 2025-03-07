@@ -1,35 +1,77 @@
 .top-recruiters-container {
     text-align: center;
-    padding: 20px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f0f4f8, #e2e8f0); /* Subtle gradient background */
 }
 
 .heading {
+
+    font-size: 2.75rem;
+    margin-bottom: 40px;
+    color: #1e293b; /* Darker color for better contrast */
+    font-weight: 700; /* Bold heading */
+    position: relative;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #9333ea); /* Gradient underline */
+    border-radius: 2px;
+    animation: underline-grow 1.5s ease-in-out infinite alternate; /* Animated underline */
+}
+
+@keyframes underline-grow {
+    0% {
+        width: 60px;
+    }
+    100% {
+        width: 120px;
+    }
+
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #64748b;
+
 }
 
 .logo-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
-    gap: 20px; /* Space between logos */
+    grid-template-columns: repeat(5, 1fr); /* Fixed 5 columns per row */
+    gap: 25px; /* Space between logos */
     justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 30px;
 }
 
 .logo-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ddd; /* Optional: Add a border around each logo */
-    padding: 10px;
-    background-color: #f9f9f9; /* Optional: Add a light background */
-    border-radius: 8px; /* Optional: Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.8); /* Glassmorphism effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 16px; /* Rounded corners */
     overflow: hidden; /* Ensure the image doesn't overflow the container */
-    width: 123px; /* Fixed width for all logo containers */
-    height: 55px; /* Fixed height for all logo containers */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+    aspect-ratio: 16/9; /* Maintain aspect ratio */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.logo-item:hover {
+    transform: translateY(-10px); /* Lift the logo on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background: rgba(255, 255, 255, 1); /* Solid background on hover */
 }
 
 .logo-item img {
@@ -39,4 +81,55 @@
     height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Ensures the image fits within the container without distortion */
     display: block;
+    filter: grayscale(50%); /* Slightly desaturate logos */
+    transition: filter 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.logo-item:hover img {
+    filter: grayscale(0%); /* Full color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .logo-grid {
+        grid-template-columns: repeat(5, 1fr); /* Maintain 5 columns for medium screens */
+        gap: 20px; /* Reduce gap for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.25rem; /* Reduce heading size for smaller screens */
+    }
+
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small tablets */
+        gap: 15px; /* Reduce gap for smaller screens */
+        padding: 20px;
+    }
+
+    .logo-item {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2rem; /* Further reduce heading size for mobile */
+    }
+
+    .logo-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+        gap: 10px;
+    }
+
+    .logo-item {
+        padding: 15px; /* Further reduce padding for mobile */
+    }
+}   

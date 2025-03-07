@@ -1,57 +1,115 @@
 .header {
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 2px solid #f0a500;
-    font-family: "Montserrat", sans-serif; /* Ensure Montserrat is applied */
-  }
-  
-  .logo img {
-    height: 50px;
-  }
-  
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  font-family: "Montserrat", sans-serif;
+  position: relative; /* No fixed position */
+  height: 80px;
+}
+
+.logo img {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f0a500;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #f0a500;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 8px 15px;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #f0a500;
+  box-shadow: 0 0 5px rgba(240, 165, 0, 0.2);
+}
+
+.search-bar button {
+  background-color: #f0a500;
+  color: #002147;
+  border: none;
+  padding: 8px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #002147;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
   .nav-links {
-    display: flex;
-    gap: 20px;
+      gap: 20px;
   }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #002147;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #f0a500;
-  }
-  
-  .search-bar {
-    display: flex;
-    gap: 10px;
-  }
-  
+
   .search-bar input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: "Montserrat", sans-serif; /* Ensure Montserrat is applied */
+      width: 150px;
   }
-  
-  .search-bar button {
-    background-color: #f0a500;
-    color: #002147;
-    border: none;
-    padding: 8px 16px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif; /* Ensure Montserrat is applied */
+}
+
+@media (max-width: 768px) {
+  .header {
+      padding: 10px 20px;
   }
-  
-  .search-bar button:hover {
-    background-color: #ffcc00;
+
+  .nav-links {
+      display: none;
   }
-  
+
+  .search-bar input {
+      width: 120px;
+  }
+}

@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './Banner.css';
+import React, { useEffect, useState } from 'react';
+import "./Banner.css";
 
 const Banner = () => {
     const [text, setText] = useState('');
@@ -10,15 +10,13 @@ const Banner = () => {
         password: '',
         confirmPassword: '',
     });
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const bannerRef = useRef(null);
 
     const fullText = ' to Vignan University';
     const speed = 100;
 
     useEffect(() => {
         let index = 0;
-        setText(''); // Reset text to prevent appending issues
+        setText(''); // Reset text to empty string
         const interval = setInterval(() => {
             if (index < fullText.length) {
                 setText((prev) => prev + fullText[index]);
@@ -47,16 +45,15 @@ const Banner = () => {
         }
         console.log('Form Data Submitted:', formData);
         setFormData({ firstname: '', lastname: '', email: '', password: '', confirmPassword: '' });
-        setFormSubmitted(true);
     };
 
     return (
-        <div className="banner-container" ref={bannerRef}>
+        <div className="banner-container">
             <div className="banner-overlay">
                 <div className="content-container">
                     <div className="text-section">
                         <h1 className="typing-text">{text}</h1>
-                        <p style={{color:'#000',fontSize:'2rem'}} className="subtext">Your Gateway to Excellence in Education</p>
+                        <p className="subtext">Your Gateway to Excellence in Education</p>
                     </div>
                     <div className="form-container">
                         <form className="form" onSubmit={handleSubmit}>
@@ -64,25 +61,20 @@ const Banner = () => {
                             <p className="message">Signup now and get full access to our app.</p>
                             <div className="flex">
                                 <label>
-                                    <input required type="text" className="input" value={formData.firstname} onChange={handleInputChange} id="firstname" />
-                                    <span>Firstname</span>
+                                    <input required type="text" className="input" value={formData.firstname} onChange={handleInputChange} id="firstname" placeholder="Firstname" />
                                 </label>
                                 <label>
-                                    <input required type="text" className="input" value={formData.lastname} onChange={handleInputChange} id="lastname" />
-                                    <span>Lastname</span>
+                                    <input required type="text" className="input" value={formData.lastname} onChange={handleInputChange} id="lastname" placeholder="Lastname" />
                                 </label>
                             </div>
                             <label>
-                                <input required type="email" className="input" value={formData.email} onChange={handleInputChange} id="email" />
-                                <span>Email</span>
+                                <input required type="email" className="input" value={formData.email} onChange={handleInputChange} id="email" placeholder="Email" />
                             </label>
                             <label>
-                                <input required type="password" className="input" value={formData.password} onChange={handleInputChange} id="password" />
-                                <span>Password</span>
+                                <input required type="password" className="input" value={formData.password} onChange={handleInputChange} id="password" placeholder="Password" />
                             </label>
                             <label>
-                                <input required type="password" className="input" value={formData.confirmPassword} onChange={handleInputChange} id="confirmPassword" />
-                                <span>Confirm password</span>
+                                <input required type="password" className="input" value={formData.confirmPassword} onChange={handleInputChange} id="confirmPassword" placeholder="Confirm password" />
                             </label>
                             <button type="submit" className="submit">Submit</button>
                             <p className="signin">Already have an account? <a href="#">Signin</a></p>

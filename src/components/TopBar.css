@@ -6,7 +6,9 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    position: relative; /* No fixed position */
 }
 
 .top-bar-links {
@@ -31,26 +33,43 @@
     padding: 8px 16px;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 .admissions:hover {
     background-color: #ffcc00;
+    transform: translateY(-2px);
 }
-.top-bar {
-    background-color: #002147;
-    color: #fff;
-    padding: 10px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    font-family: "Montserrat", sans-serif; /* Updated font */
-  }
-  
-  .top-bar-links a {
-    font-family: "Montserrat", sans-serif; /* Updated font */
-  }
-  
-  .admissions {
-    font-family: "Montserrat", sans-serif; /* Updated font */
-  }
+
+@media (max-width: 1024px) {
+    .top-bar-links {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .top-bar {
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar-links {
+        display: none;
+    }
+
+    .top-bar {
+        justify-content: flex-end;
+    }
+}
+.cursor-pointer {
+    margin-left: 8px;
+    font-size: 18px; /* Bigger size */
+    font-weight: bold; /* Make it bold */
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.admissions:hover .cursor-pointer {
+    transform: translateX(4px); /* Moves the arrow slightly on hover */
+}

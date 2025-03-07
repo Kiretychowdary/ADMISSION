@@ -1,231 +1,100 @@
-/* Ensures the banner is full screen and responsive */
 .banner-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    min-height: 100vh;
+    background: url('https://vignan.ac.in/blog/images/august-21/university2.jpg') no-repeat center center/cover;
+    margin-top: 0;
+    padding-top: 74px;
+    position: relative;
 }
 
-/* Makes the image fully cover the banner */
-.banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures perfect image fit */
+.banner-container::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 33, 71, 0.85) 0%, rgba(0, 33, 71, 0.7) 100%);
 }
 
-/* Container for text and button */
-.banner-content {
+.banner-overlay {
+    width: 90%;
+    max-width: 1400px;
     position: relative;
-    width: 100%;
-    max-width: 1200px;
+    z-index: 2;
+    padding: 3rem;
+}
+
+.content-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    z-index: 1;
+    gap: 4rem;
 }
 
-/* Typing text on the left */
-.banner-text {
+.text-section {
+    flex: 1;
     color: white;
-    text-align: left;
 }
 
 .typing-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-    color: #000080; /* Navy Blue */
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    border-right: 2px solid white;
-    animation: blinkCursor 0.8s infinite;
+    animation: fadeInUp 1s ease-out;
 }
 
-/* Cursor blinking effect */
-@keyframes blinkCursor {
-    50% { border-color: transparent; }
-}
-
-/* Apply button on the right */
-.banner-button {
-    text-align: right;
-}
-
-.banner-button button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.banner-button button:hover {
-    background-color: #0056b3;
-}
-
-/* Popup form styling */
-.popup-form {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
+.subtext {
+    font-size: 1.8rem;
+    color: #f0a500;
+    font-weight: 500;
+    margin-top: 1rem;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
 }
 
 .form-container {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.form-container h2 {
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.form-container label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.form-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.form-container button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.form-container button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.close-button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-}
-
-.close-button:hover {
-    background-color: #c82333;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .banner-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .banner-button {
-        margin-top: 20px;
-        text-align: left;
-    }
-
-    .typing-text {
-        font-size: 2rem;
-    }
-}
-
-
-/* Popup form styling */
-.popup-form {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.form-container {
-    background: #fff;
-    padding: 20px;
+    flex: 1;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    max-width: 350px;
-    width: 100%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-out;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .title {
-    font-size: 28px;
-    color: royalblue;
-    font-weight: 600;
-    letter-spacing: -1px;
+    font-size: 2rem;
+    color: #002147;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
     position: relative;
-    display: flex;
-    align-items: center;
     padding-left: 30px;
 }
 
-.title::before, .title::after {
+.title::before,
+.title::after {
     position: absolute;
     content: "";
     height: 16px;
     width: 16px;
     border-radius: 50%;
     left: 0;
-    background-color: royalblue;
+    background-color: #002147;
 }
 
 .title::before {
     width: 18px;
     height: 18px;
-    background-color: royalblue;
 }
 
 .title::after {
@@ -234,80 +103,91 @@
     animation: pulse 1s linear infinite;
 }
 
-.message, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-}
-
-.signin {
-    text-align: center;
-}
-
-.signin a {
-    color: royalblue;
-}
-
-.signin a:hover {
-    text-decoration: underline royalblue;
+.message {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
 .flex {
     display: flex;
-    width: 100%;
-    gap: 6px;
+    gap: 1rem;
 }
 
 .form label {
-    position: relative;
-}
-
-.form label .input {
     width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
+}
+
+.form .input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
     border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-}
-
-.form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-}
-
-.form label .input:focus + span, .form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-}
-
-.form label .input:valid + span {
-    color: green;
+.form .input:focus {
+    border-color: #002147;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 33, 71, 0.1);
 }
 
 .submit {
+    background: #002147;
+    color: white;
+    padding: 12px;
     border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
     border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    transition: 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
 }
 
 .submit:hover {
-    background-color: rgb(56, 90, 194);
+    background: #f0a500;
+    transform: translateY(-2px);
+}
+
+.signin {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signin a {
+    color: #002147;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signin a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes pulse {
@@ -320,132 +200,55 @@
         opacity: 0;
     }
 }
-/* Close button styling */
-.close-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #888;
-    cursor: pointer;
-    transition: color 0.3s ease;
+
+@media (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .text-section,
+    .form-container {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .typing-text {
+        font-size: 2.5rem;
+    }
+
+    .subtext {
+        font-size: 1.4rem;
+    }
 }
 
-.close-button:hover {
-    color: #333;
+@media (max-width: 768px) {
+    .banner-overlay {
+        padding: 2rem 1rem;
+    }
+
+    .typing-text {
+        font-size: 2rem;
+    }
+
+    .subtext {
+        font-size: 1.2rem;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
-
-
-/* Typing text effect */
-.typing-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white; /* Cursor effect */
-    animation: blinkCursor 0.8s infinite;
-}
-
-/* Cursor blinking effect */
-@keyframes blinkCursor {
-    50% { border-color: transparent; }
-}/* Typing text effect */
-.typing-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white; /* Cursor effect */
-    animation: blinkCursor 0.8s infinite;
-}
-
-/* Cursor blinking effect */
-@keyframes blinkCursor {
-    50% { border-color: transparent; }
-}
-/* Typing text effect */
-.typing-text {
-    font-size: 2.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid white; /* Cursor effect */
-    animation: blinkCursor 0.8s infinite;
-}
-
-/* Cursor blinking effect */
-@keyframes blinkCursor {
-    50% { border-color: transparent; }
-}
-
-
-
-
-
-
-
-.banner-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: url('your-background-image.jpg') no-repeat center center/cover;
-}
-
-.banner-overlay {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background: rgba(0, 0, 0, 0.6); */
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.content-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.banner {
+    position: relative;
     width: 100%;
-}
-
-.text-section {
-    width: 50%;
-    color: white;
-}
-
-.form-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-.banner-container {
+    height: 80vh; /* Adjust height as needed */
+    background: url("your-banner-image.jpg") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background: url('https://vignan.ac.in/blog/images/august-21/university2.jpg') no-repeat center center/cover;
-}
-
-.banner-overlay {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background: rgba(0, 0, 0, 0.6); */
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.text-section {
-    width: 50%;
+    text-align: center;
     color: white;
-}
-
-.form-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
+  }
+  

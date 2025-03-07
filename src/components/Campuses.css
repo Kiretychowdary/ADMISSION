@@ -1,33 +1,79 @@
-.campuses-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    padding: 24px;
-  }
-  
-  .campuses-heading {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-  
-  .campuses-content {
-    display: flex;
-    /* justify-content: center; */
-    width: 100%;
-  }
-  
-  .campuses-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-  }
-  
-  .campus-image {
-    width: 340px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
+.containers {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.container {
+  width: 35%; /* Decreased width from 45% */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #1e1e1e; /* Deep black-gray */
+}
+
+.image-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  color: #ff9800; /* Bright orange */
+  width: 100%;
+  padding: 20px;
+  z-index: 2; /* Ensure the overlay text is above the image */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ff9800; /* Bright orange */
+}
+
+/* Always visible button */
+.apply-button {
+  padding: 12px 24px;
+  background-color: #ff5722; /* Deep orange */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  margin: auto;
+  z-index: 3; /* Ensure the button is above the overlay text */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apply-button:hover {
+  background-color: #ff9800; /* Lighter orange for hover */
+  box-shadow: 0px 4px 15px rgba(255, 152, 0, 0.9); /* Neon glow */
+}
+
+/* Adds a linear gradient overlay */
+.image-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 1; /* Ensure the gradient is below the overlay text and button */
+}
