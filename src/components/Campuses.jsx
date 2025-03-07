@@ -1,5 +1,5 @@
 import React from "react";
-import "./Campuses.css";
+import './styles/Campuses.css';
 import Ablock from "./Ablock.jpg";
 import Hyd from "./HydVignan.avif";
 const Campuses = () => {
