@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Banner.css";
+import '../styles/Banner.css';
 
 const Banner = () => {
     const [text, setText] = useState('');

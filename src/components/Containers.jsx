@@ -1,5 +1,5 @@
 import React from "react";
-import "./Containers.css";
+import '../styles/Containers.css';
 
 function Containers() {
   // Define the URLs for the buttons

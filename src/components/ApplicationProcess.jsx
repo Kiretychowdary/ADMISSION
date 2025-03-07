@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './ApplicationProcess.css';
+import '../styles/ApplicationProcess.css';
 import { FaArrowRight } from 'react-icons/fa'; // Import arrow icon from react-icons
 
 const ApplicationProcess = () => {
