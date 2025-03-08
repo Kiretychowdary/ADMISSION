@@ -1,0 +1,343 @@
+
+.dashboard {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f5f7fa;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* Header Styles */
+  .dashboard-header {
+    background-color: #1e40af;
+    color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+  
+  /* Section Styles */
+  .dashboard section {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dashboard h2 {
+    color: #2d3748;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  /* Stats Overview */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .stat-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-icon {
+    margin: 0 auto 1rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    color: #64748b;
+  }
+  
+  /* Features Section */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background-color: #f8fafc;
+    transition: background-color 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    background-color: #f0f9ff;
+  }
+  
+  .feature-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #2563eb;
+    margin: 0 auto 1rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1e3a8a;
+  }
+  
+  .feature-card p {
+    color: #64748b;
+  }
+  
+  /* Programs Section */
+  .programs-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .program-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .program-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .program-header:hover {
+    background-color: #f8fafc;
+  }
+  
+  .program-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+  }
+  
+  .program-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #64748b;
+  }
+  
+  .program-content {
+    padding: 1rem;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .program-content p {
+    margin: 0;
+    color: #64748b;
+  }
+  
+  /* Partnerships Section */
+  .partnerships-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .partnerships-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .partnerships-image img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .partnerships-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .partnership-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .partnership-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #2563eb;
+    flex-shrink: 0;
+  }
+  
+  .partnership-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #334155;
+  }
+  
+  .partnership-item p {
+    color: #64748b;
+    margin: 0;
+  }
+  
+  /* Career Section */
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .career-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .career-blue {
+    border-top: 4px solid #2563eb;
+  }
+  
+  .career-green {
+    border-top: 4px solid #10b981;
+  }
+  
+  .career-purple {
+    border-top: 4px solid #8b5cf6;
+  }
+  
+  .career-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #334155;
+  }
+  
+  .career-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .career-card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: #64748b;
+  }
+  
+  .career-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    color: inherit;
+  }
+  
+  .career-blue .career-icon {
+    color: #2563eb;
+  }
+  
+  .career-green .career-icon {
+    color: #10b981;
+  }
+  
+  .career-purple .career-icon {
+    color: #8b5cf6;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    background-color: #1e3a8a;
+    color: white;
+  }
+  
+  .contact-section h2 {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .contact-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #93c5fd;
+  }
+  
+  .contact-link {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .dashboard {
+      padding: 1rem;
+    }
+    
+    .dashboard-header {
+      padding: 1.5rem;
+    }
+    
+    .dashboard-header h1 {
+      font-size: 2rem;
+    }
+    
+    .stat-card, .feature-card, .career-card {
+      padding: 1rem;
+    }
+  }

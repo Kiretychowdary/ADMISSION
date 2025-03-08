@@ -1,89 +1,84 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Banner.css';
-
 const Banner = () => {
-    const [text, setText] = useState('');
-    const [formData, setFormData] = useState({
-        firstname: '',
-        lastname: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-    });
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    department: ''
+  });
 
-    const fullText = ' to Vignan University';
-    const speed = 100;
+  const departments = [
+    "Mathematics",
+    "Food Technology",
+    "Advanced  Computer Science Engineering",
+    "Computer Science and Engineering",
+    "Electrical and Electronics Engineering",
+    "Electronics and Communication Engineering",
+    "Mechanical Engineering",
+    "Civil Engineering",
+    "Chemical Engineering",
+    "Biotechnology",
+    "Biomedical Engineering",
+    "Management Studies",
+    "Pharmacy",
+    "Agricultural Engineering",
+    "Agricultural and Horticultural Sciences",
+    "Law",
+    "Information Technology",
+    "English and Foreign Languages",
+    "Social sciences and Humanities",
+    "Textile Technology"
+  ];
 
-    useEffect(() => {
-        let index = 0;
-        setText(''); // Reset text to empty string
-        const interval = setInterval(() => {
-            if (index < fullText.length) {
-                setText((prev) => prev + fullText[index]);
-                index++;
-            } else {
-                clearInterval(interval);
-            }
-        }, speed);
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-        return () => clearInterval(interval);
-    }, []);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('selectedDepartment', formData.department);
+    navigate('/departments');
+  };
 
-    const handleInputChange = (e) => {
-        const { id, value } = e.target;
-        setFormData((prevData) => ({
-            ...prevData,
-            [id]: value,
-        }));
-    };
+  return (
+    <div className="banner-container">
+      <div className="banner-overlay">
+        <div className="content-container">
+          <div className="text-section">
+            <h1 className="typing-text">Join Our University</h1>
+            <p className="subtext">Apply now and be a part of an amazing academic journey!</p>
+          </div>
+          <div className="form-container">
+            <h2 className="title">Apply Now for Admission</h2>
+            <form className="form" onSubmit={handleSubmit}>
+              <label>Name:</label>
+              <input type="text" name="name" className="input" value={formData.name} onChange={handleChange} required />
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!formData.firstname || !formData.lastname || !formData.email || !formData.password || !formData.confirmPassword) {
-            alert('Please fill out all required fields.');
-            return;
-        }
-        console.log('Form Data Submitted:', formData);
-        setFormData({ firstname: '', lastname: '', email: '', password: '', confirmPassword: '' });
-    };
+              <label>Email:</label>
+              <input type="email" name="email" className="input" value={formData.email} onChange={handleChange} required />
 
-    return (
-        <div className="banner-container">
-            <div className="banner-overlay">
-                <div className="content-container">
-                    <div className="text-section">
-                        <h1 className="typing-text">{text}</h1>
-                        <p className="subtext">Your Gateway to Excellence in Education</p>
-                    </div>
-                    <div className="form-container">
-                        <form className="form" onSubmit={handleSubmit}>
-                            <p className="title">Register</p>
-                            <p className="message">Signup now and get full access to our app.</p>
-                            <div className="flex">
-                                <label>
-                                    <input required type="text" className="input" value={formData.firstname} onChange={handleInputChange} id="firstname" placeholder="Firstname" />
-                                </label>
-                                <label>
-                                    <input required type="text" className="input" value={formData.lastname} onChange={handleInputChange} id="lastname" placeholder="Lastname" />
-                                </label>
-                            </div>
-                            <label>
-                                <input required type="email" className="input" value={formData.email} onChange={handleInputChange} id="email" placeholder="Email" />
-                            </label>
-                            <label>
-                                <input required type="password" className="input" value={formData.password} onChange={handleInputChange} id="password" placeholder="Password" />
-                            </label>
-                            <label>
-                                <input required type="password" className="input" value={formData.confirmPassword} onChange={handleInputChange} id="confirmPassword" placeholder="Confirm password" />
-                            </label>
-                            <button type="submit" className="submit">Submit</button>
-                            <p className="signin">Already have an account? <a href="#">Signin</a></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
+              <label>Phone:</label>
+              <input type="tel" name="phone" className="input" value={formData.phone} onChange={handleChange} required />
+
+              <label>Department:</label>
+              <select name="department" className="input" value={formData.department} onChange={handleChange} required>
+                <option value="">-- Select Department --</option>
+                {departments.map((dept, index) => (
+                  <option key={index} value={dept}>{dept}</option>
+                ))}
+              </select>
+
+              <button type="submit" className="submit">Submit Application</button>
+            </form>
+            
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Banner;

@@ -9,7 +9,7 @@ import Achievements from "../components/Achievements.jsx";
 import Branches from "../components/Branches.jsx";
 import Rankings from "../components/Rankings.jsx";
 import VirtualTour from "../components/VirtualTour.jsx"; // ✅ Import added
-
+import InternationDashboard from "./InternationDashboard.jsx";
 export class Home extends Component {
   render() {
     return (
@@ -22,7 +22,8 @@ export class Home extends Component {
         <Rankings />
         <Achievements />
         <Placements />
-        <VirtualTour /> ✅ Now it will work
+        <VirtualTour />
+        <InternationDashboard />
         <Branches />
       </div>
     );
