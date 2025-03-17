@@ -65,7 +65,12 @@ const styles = {
     gap: '0.5rem',
     border: 'none',
     cursor: 'pointer',
+ 
+    transition: 'background-color 0.2s',
+    textDecoration: 'none' // Ensures the link appears as a styled button
+  
     transition: 'background-color 0.2s'
+ 
   },
   buttonArrow: {
     display: 'inline-block'
@@ -100,8 +105,16 @@ const VirtualTour = () => {
           A thriving community of creative and accomplished people from around the world.
         </p>
 
+ 
+        {/* SBIT Virtual Tour Button */}
+        <a 
+          href="https://www.easytourz.com/BT-EmabedTour/all/a0ccdb54f97e5369" 
+          target="_blank" 
+          rel="noopener noreferrer"
+ 
         {/* CTA Button */}
         <button 
+ 
           style={{
             ...styles.button,
             backgroundColor: isHovered ? '#fbbf24' : '#eab308'
@@ -109,12 +122,22 @@ const VirtualTour = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
+ 
+          VIGNAN Virtual Tour
+          <span style={styles.buttonArrow}>→</span>
+        </a>
+ 
           Virtual Tour 360
           <span style={styles.buttonArrow}>→</span>
         </button>
+ 
       </div>
     </div>
   );
 };
 
+ 
 export default VirtualTour;
+=======
+export default VirtualTour;
+ 

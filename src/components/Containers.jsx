@@ -1,14 +1,19 @@
 import React from "react";
+ 
+import { useNavigate } from "react-router-dom";
+=======
+ 
 import '../styles/Containers.css';
 
 function Containers() {
-  // Define the URLs for the buttons
-  const indiaAdmissionsUrl = "https://example.com/india-admissions"; // Replace with the actual URL
-  const internationalAdmissionsUrl = "https://example.com/international-admissions"; // Replace with the actual URL
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
     <div className="containers">
-      {/* Container 1 */}
       <div className="container">
         <div className="image-overlay">
           <img
@@ -18,14 +23,16 @@ function Containers() {
           />
           <div className="overlay-text">
             <h2>National</h2>
-            <a href={indiaAdmissionsUrl} target="_blank" rel="noopener noreferrer">
-              <button className="apply-button">Apply Now</button>
-            </a>
+            <button 
+              className="apply-button" 
+              onClick={() => handleNavigation('/national-admissions')}
+            >
+              Apply Now
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Container 2 */}
       <div className="container">
         <div className="image-overlay">
           <img
@@ -35,9 +42,12 @@ function Containers() {
           />
           <div className="overlay-text">
             <h2>International</h2>
-            <a href={internationalAdmissionsUrl} target="_blank" rel="noopener noreferrer">
-              <button className="apply-button">Apply Now</button>
-            </a>
+            <button 
+              className="apply-button" 
+              onClick={() => handleNavigation('/international-dashboard')}
+            >
+              Apply Now
+            </button>
           </div>
         </div>
       </div>
