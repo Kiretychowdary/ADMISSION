@@ -1,6 +1,12 @@
+ 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Banner.css';
+=======
+import React, { useEffect, useState } from 'react';
+import '../styles/Banner.css';
+
+ 
 const Banner = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({

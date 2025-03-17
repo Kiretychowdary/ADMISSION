@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+ 
 
 import Home from "./components/Home";
 
@@ -15,16 +16,25 @@ import Footer from "./components/Footer";
 import NewAdmissionForm from "./components/NewAdmissionForm";
 import InternationDashboard from "./components/InternationDashboard";
 import NationalDashboard from "./components/NationalDashboard";
-
+ 
+import Home from "./components/Home";
+import Header from "./components/Header";
+import TopBar from "./components/TopBar";
+ 
 function App() {
 
     return (
+ 
 
         <>
 
+=======
+        <>
+ 
             <TopBar />
 
             <Header />
+ 
 
             <Routes>
 
@@ -41,10 +51,19 @@ function App() {
             <Footer />
         </>
 
+ 
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+ 
     );
 
 }
 
+ 
 
 
 export default App;
+=======
+export default App;
+ 
